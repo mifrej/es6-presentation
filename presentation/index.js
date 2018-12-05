@@ -11,7 +11,8 @@ import {
   List,
   Quote,
   Slide,
-  Text
+  Text,
+  CodePane
 } from "spectacle";
 
 // Import theme
@@ -65,6 +66,9 @@ export default class Presentation extends React.Component {
             <Quote>Example Quote</Quote>
             <Cite>Author</Cite>
           </BlockQuote>
+        </Slide>
+        <Slide>
+          <CodePane lang="jsx" source={require('raw-loader!./vars')} textSize="30" />
         </Slide>
       </Deck>
     );
