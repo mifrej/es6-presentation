@@ -1,5 +1,6 @@
 // Import React
 import React from "react";
+import styled from 'react-emotion';
 
 // Import Spectacle Core tags
 import {
@@ -21,8 +22,10 @@ import createTheme from "spectacle/lib/themes/default";
 // Require CSS
 require("normalize.css");
 
+import './assets/cobalt2.prism.css'
+
 const theme = createTheme({
-  primary: "white",
+  primary: "#ffc600",
   secondary: "#1F2022",
   tertiary: "#03A9FC",
   quaternary: "#CECECE"
@@ -30,6 +33,7 @@ const theme = createTheme({
   primary: "Montserrat",
   secondary: "Helvetica"
 });
+
 
 export default class Presentation extends React.Component {
   render() {
@@ -68,7 +72,7 @@ export default class Presentation extends React.Component {
           </BlockQuote>
         </Slide>
         <Slide>
-          <CodePane lang="jsx" source={require('raw-loader!./vars')} textSize="30" />
+          <CodePane lang="jsx" source={require('raw-loader!./vars')} textSize="24" theme="external" contentEditable />
         </Slide>
       </Deck>
     );

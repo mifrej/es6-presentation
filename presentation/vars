@@ -1,2 +1,10 @@
-const foo = 5 // constance -> use it as much as possible
-let bar = 3 // allow mutation, only use when you really need to mutate
+/**
+ * constance -> use it as much as possible
+ */
+const foo = 5;
+
+/**
+ * `let` allows for mutation,
+ * only use when necessary
+ */
+let bar = 3;
