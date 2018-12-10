@@ -7,7 +7,11 @@ import {
   BlockQuote,
   Cite,
   Deck,
+  Fill,
+  Fit,
   Heading,
+  Layout,
+  Link,
   ListItem,
   List,
   Quote,
@@ -28,51 +32,58 @@ const theme = createTheme({
   primary: "#ffc600",
   secondary: "#1F2022",
   tertiary: "#03A9FC",
-  quaternary: "#CECECE"
+  quaternary: "white"
 }, {
-  primary: "Montserrat",
+  primary: {
+    name: "Roboto Condensed",
+    googleFont: true
+  },
   secondary: "Helvetica"
 });
 
+const CustomList = styled(List)`
+  line-height: 1.2;
+`;
 
+const StyledListItem = styled(ListItem)`
+  margin-bottom: 0.6em;
+  list-style-position: initial;
+`;
 export default class Presentation extends React.Component {
   render() {
     return (
       <Deck transition={["zoom", "slide"]} transitionDuration={500} theme={theme}>
         <Slide transition={["zoom"]} bgColor="primary">
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
-            Spectacle Boilerplate
+            ES6 essentials
           </Heading>
-          <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
-            open the presentation/index.js file to get started
-          </Text>
         </Slide>
         <Slide transition={["fade"]} bgColor="tertiary">
-          <Heading size={6} textColor="primary" caps>Typography</Heading>
-          <Heading size={1} textColor="secondary">Heading 1</Heading>
-          <Heading size={2} textColor="secondary">Heading 2</Heading>
-          <Heading size={3} textColor="secondary">Heading 3</Heading>
-          <Heading size={4} textColor="secondary">Heading 4</Heading>
-          <Heading size={5} textColor="secondary">Heading 5</Heading>
-          <Text size={6} textColor="secondary">Standard text</Text>
+          <Heading size={2} textColor="secondary">Goal 🥅</Heading>
+          <CustomList>
+            <StyledListItem>Get to know essential syntax in order to get productive.</StyledListItem>
+            <StyledListItem>Recognize common baseline in the team</StyledListItem>
+            <StyledListItem>Introduction to new Frontend architecture</StyledListItem>
+          </CustomList>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>Standard List</Heading>
-          <List>
-            <ListItem>Item 1</ListItem>
-            <ListItem>Item 2</ListItem>
-            <ListItem>Item 3</ListItem>
-            <ListItem>Item 4</ListItem>
-          </List>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
-          <BlockQuote>
-            <Quote>Example Quote</Quote>
-            <Cite>Author</Cite>
-          </BlockQuote>
+          <Heading size={6} textColor="secondary" caps>Boilerplate Code</Heading>
+          <Link href="https://github.com/mifrej/es6-essentials" target="blank" >Starter code -> https://github.com/mifrej/es6-essentials</Link>
+          <Text>We will be coding it in Code Sandbox</Text>
         </Slide>
         <Slide>
-          <CodePane lang="jsx" source={require('raw-loader!./vars')} textSize="24" theme="external" contentEditable />
+          <Heading size={2}>ES Modules</Heading>
+          <Text>Exports</Text>
+          <CodePane lang="js" source={require('raw-loader!./assets/modules_export')} textSize="20" theme="external" contentEditable />
+        </Slide>
+        <Slide>
+          <Heading size={2}>ES Modules</Heading>
+          <Text>Imports</Text>
+          <CodePane lang="js" source={require('raw-loader!./assets/modules_import')} textSize="20" theme="external" contentEditable />
+        </Slide>
+        <Slide transition={["fade"]}>
+          <Heading size={2} textColor="secondary">Variables</Heading>
+          <CodePane lang="js" source={require('raw-loader!./assets/vars')} textSize="20" theme="external" contentEditable />
         </Slide>
       </Deck>
     );

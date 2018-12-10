@@ -1,0 +1,8 @@
+// default import (import name could be any)
+import acmModule from './src/folder_name/file_name';
+
+// named imports (name matters), curly braces
+import { teamName, team } from './src/folder_name/file_name';
+
+acmModule();
+console.log(teamName, team);

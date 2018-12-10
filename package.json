@@ -5,9 +5,9 @@
   "main": "lib/index.js",
   "scripts": {
     "clean": "rimraf dist",
-    "build": "npm run clean & cross-env NODE_ENV=production webpack --config webpack.config.production.js",
+    "build": "yarn run clean & cross-env NODE_ENV=production webpack --config webpack.config.production.js",
     "lint": "eslint --ext .js,.jsx .",
-    "deploy": "npm run build && surge -p .",
+    "deploy": "yarn run build && now .",
     "export": "spectacle-renderer --delay 4000",
     "start": "cross-env NODE_ENV=development node server.js"
   },
@@ -50,6 +50,7 @@
     "is-buffer": "^2.0.3",
     "markdown-loader": "^4.0.0",
     "node-libs-browser": "^2.1.0",
+    "now": "^12.1.9",
     "raw-loader": "^0.5.1",
     "react-hot-loader": "^4.3.11",
     "react-transform-catch-errors": "^1.0.2",

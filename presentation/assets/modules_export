@@ -1,0 +1,16 @@
+/**
+ * default export (only one per file)
+ */
+export default function mainModuleFunction() {
+  console.log('Executing main stuff');
+};
+
+/**
+ * named exports
+ * any number of and in parallel with default export
+ */
+export const teamName = 'ACM';
+export const team = {
+  name: 'ACM',
+  purpose: 'Apartment upgrades'
+};

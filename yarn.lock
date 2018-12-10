@@ -6075,6 +6075,11 @@ normalize.css@^7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/normalize.css/-/normalize.css-7.0.0.tgz#abfb1dd82470674e0322b53ceb1aaf412938e4bf"
 
+now@^12.1.9:
+  version "12.1.9"
+  resolved "https://registry.yarnpkg.com/now/-/now-12.1.9.tgz#213f2842c970edeb5d73b9a82dc12efaf2e410cd"
+  integrity sha512-WtVG3CVf5XSub0IiZpqXOkBO/S73VcFlYPsIUpTdnnDNcRde4XGfhWCU20ve1SW3tvXhsUM6D9vdISv0IhK53g==
+
 npm-bundled@^1.0.1:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/npm-bundled/-/npm-bundled-1.0.5.tgz#3c1732b7ba936b3a10325aef616467c0ccbcc979"
