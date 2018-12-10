@@ -1,0 +1,5 @@
+
+const teamName = 'ACM';
+const age = 2;
+const sentence = `${teamName} team is ${age} years old, or so.`;
+console.log(sentence);
