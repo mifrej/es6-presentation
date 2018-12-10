@@ -1,0 +1,11 @@
+/**
+ * Function expression,
+ * it's not hoisted
+ */
+
+// is not a function TypeError
+myFunction();
+
+var myFunction =  function() {
+  console.log('I am executed');
+}

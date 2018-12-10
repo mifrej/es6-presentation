@@ -5,6 +5,6 @@ const foo = 5;
 
 /**
  * `let` allows for mutation,
- * only use when necessary
+ * only use when reassigning is required
  */
 let bar = 3;

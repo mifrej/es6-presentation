@@ -1,0 +1,11 @@
+/**
+ * Function declaration,
+ * compiler hoist the function declarations
+ */
+
+// No error, function will execute correctly
+myFunction();
+
+function someFuncName() {
+  console.log('I am executed');
+}
