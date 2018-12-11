@@ -167,7 +167,7 @@ export default class Presentation extends React.Component {
 
         <Slide>
           <HeadingStyled size={4}>Browser native DOM selector methods</HeadingStyled>
-          <Text textColor="secondary">Where is my $ selector 😲</Text>
+          <Text textColor="secondary">Where is my <Code>$</Code> selector 😲</Text>
           <Image src="https://media.giphy.com/media/3o84U72tKO389H2lI4/giphy.gif"/>
         </Slide>
 
@@ -194,7 +194,7 @@ export default class Presentation extends React.Component {
             <StyledListItem>Select all nodes with <Code>[data-time]</Code> attribute</StyledListItem>
             <StyledListItem>Select all nodes with classname <Code>special-element</Code></StyledListItem>
             <StyledListItem>Create new <Code>ul</Code> list with one <Code>li</Code></StyledListItem>
-            <StyledListItem>Append new created list to a DOM</StyledListItem>
+            <StyledListItem>Append new created <Code>ul</Code> list to a DOM</StyledListItem>
           </CustomList>
         </Slide>
         <Slide>
@@ -207,11 +207,11 @@ export default class Presentation extends React.Component {
           <CodePane lang="js" source={require('raw-loader!./assets/function_expression')} textSize="22" theme="external" contentEditable />
         </Slide>
         <Slide>
-          <HeadingStyled size={3}>Arrow <Code>=></Code> function</HeadingStyled>
+          <HeadingStyled size={3}>Arrow <CodeStyled>=></CodeStyled> function</HeadingStyled>
           <CodePane lang="js" source={require('raw-loader!./assets/arrow_function')} textSize="22" theme="external" contentEditable />
         </Slide>
-        <Slide bgColor="tertiary">
-          <HeadingStyled size={3}>=> Function characteristics</HeadingStyled>
+        <Slide>
+          <HeadingStyled size={3}><CodeStyled>=></CodeStyled> Function characteristics</HeadingStyled>
           <CustomList>
             <StyledListItem>Does not change <Code>this</Code> context</StyledListItem>
             <StyledListItem>Doesn't have keyword <Code>arguments</Code></StyledListItem>
@@ -233,6 +233,19 @@ export default class Presentation extends React.Component {
         <Slide>
           <HeadingStyled size={2}>Object literal improvements</HeadingStyled>
           <CodePane lang="js" source={require('raw-loader!./assets/object_literal_improvements')} textSize="22" theme="external" contentEditable />
+        </Slide>
+        <Slide bgColor="tertiary">
+          <HeadingStyled size={2}>Exercise</HeadingStyled>
+          <HeadingStyled size={6} textAlign="left">In <Code>src/es6/starter/object_literal.js</Code></HeadingStyled>
+          <CustomList ordered>
+            <StyledListItem>Improve the syntax of the object with ES6 upgrades</StyledListItem>
+            <StyledListItem>Make the <Code>cycle</Code> prop name being dynamic from <Code>const activity</Code></StyledListItem>
+          </CustomList>
+        </Slide>
+
+        <Slide>
+          <HeadingStyled size={2}>Destructuring</HeadingStyled>
+          <CodePane lang="js" source={require('raw-loader!./assets/destructuring')} textSize="22" theme="external" contentEditable />
         </Slide>
       </Deck>
     );

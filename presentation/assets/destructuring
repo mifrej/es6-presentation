@@ -1,0 +1,12 @@
+// destructuring on array
+const details = ['ACM', 123, 'https://construction.akelius.de'];
+const [name, id, website] = details;
+
+// destructuring on object
+const person = {
+  first: 'Milosz',
+  last: 'Frejnik',
+  country: 'Poland'
+};
+const { first, last, country } = person;
+console.log(name, id, website, first, last, country);
