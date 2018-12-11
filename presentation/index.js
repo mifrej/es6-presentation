@@ -22,6 +22,7 @@ import {
   CodePane
 } from "spectacle";
 
+
 // Import theme
 import createTheme from "spectacle/lib/themes/default";
 
@@ -29,6 +30,13 @@ import createTheme from "spectacle/lib/themes/default";
 require("normalize.css");
 
 import './assets/cobalt2.prism.css'
+import preloader from "spectacle/lib/utils/preloader";
+
+const images = {
+  jsState: require('../assets/dependencies_js.jpg')
+}
+
+preloader(images);
 
 const theme = createTheme({
   primary: "#ffc600",
@@ -59,6 +67,9 @@ const StyledListItem = styled(ListItem)`
 const HeadingStyled = styled(Heading)`
   margin-bottom: 0.4em;
 `
+const CodeStyled = styled(Code)`
+  font-size: inherit;
+`;
 export default class Presentation extends React.Component {
   render() {
     return (
@@ -77,8 +88,10 @@ export default class Presentation extends React.Component {
           </CustomList>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <HeadingStyled size={6} textColor="secondary" caps>Boilerplate Code</HeadingStyled>
-          <Link href="https://github.com/mifrej/es6-essentials" target="_blank" >Starter code -> https://github.com/mifrej/es6-essentials</Link>
+          <HeadingStyled size={4} textColor="secondary" caps>Boilerplate Code</HeadingStyled>
+          <HeadingStyled size={6} textColor="secondary">
+            <Link href="https://github.com/mifrej/es6-essentials" target="_blank" > https://github.com/mifrej/es6-essentials</Link>
+          </HeadingStyled>
           <Text>We will be coding it in Code Sandbox</Text>
         </Slide>
         <Slide>
@@ -91,13 +104,17 @@ export default class Presentation extends React.Component {
           <Text>Imports</Text>
           <CodePane lang="js" source={require('raw-loader!./assets/modules_import')} textSize="22" theme="external" contentEditable />
         </Slide>
-        <Slide>
+        <Slide bgColor="tertiary">
           <HeadingStyled size={2}>Exercise</HeadingStyled>
+          <HeadingStyled size={6} textAlign="left">In <Code>src/es6/starter/modules.js</Code></HeadingStyled>
           <CustomList ordered>
-            <StyledListItem>Setup a function as <strong>default export</strong></StyledListItem>
-            <StyledListItem>Setup at least <strong>2 named exports</strong></StyledListItem>
-            <StyledListItem>Import <strong>default export</strong> and execute it</StyledListItem>
-            <StyledListItem>Import <strong>named exports</strong> and console log them</StyledListItem>
+            <StyledListItem>Setup a function as <Code>default export</Code></StyledListItem>
+            <StyledListItem>Setup at least 2 <Code>named exports</Code></StyledListItem>
+          </CustomList>
+          <HeadingStyled size={6} textAlign="left">In <Code>src/index.js</Code></HeadingStyled>
+          <CustomList ordered>
+            <StyledListItem>Import <Code>default export</Code> and execute it</StyledListItem>
+            <StyledListItem>Import <Code>named exports</Code> and console log them</StyledListItem>
           </CustomList>
         </Slide>
         <Slide transition={["fade"]}>
@@ -107,22 +124,58 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide transition={["fade"]}>
           <HeadingStyled size={2} textColor="secondary">Variables</HeadingStyled>
-          <HeadingStyled size={4}>New types - <strong>const</strong> and <strong>let</strong></HeadingStyled>
+          <HeadingStyled size={4}>New types - <CodeStyled>const</CodeStyled> and <CodeStyled>let</CodeStyled></HeadingStyled>
           <CodePane lang="js" source={require('raw-loader!./assets/vars')} textSize="22" theme="external" contentEditable />
+        </Slide>
+        <Slide>
+          <HeadingStyled size={3} textColor="secondary"><CodeStyled>const, let</CodeStyled> characteristics</HeadingStyled>
+          <CustomList>
+            <StyledListItem>Both are block scoped <Code>{`{ let foo = 5 }`}</Code></StyledListItem>
+            <StyledListItem>Cannot be redeclared</StyledListItem>
+            <StyledListItem><Code>const</Code> is read only (although you may add and change object properties)</StyledListItem>
+            <StyledListItem>They are not hoisted by the interpreter</StyledListItem>
+          </CustomList>
         </Slide>
         <Slide>
           <HeadingStyled size={2}>Exercise</HeadingStyled>
           <CustomList ordered>
-            <StyledListItem>Convert var `name` to a const type</StyledListItem>
-            <StyledListItem>Add "surname" prop to the object in `const name`</StyledListItem>
+            <StyledListItem>
+              In file <Code>src/es6/starter/variables.js</Code>,
+              convert <Code>var me</Code> to a <Code>const</Code> type.<br />
+            </StyledListItem>
+            <StyledListItem>Add <Code>surname</Code> prop to the object in <Code>const me</Code></StyledListItem>
             <StyledListItem>Fix the for loop to console log consequent iteration number</StyledListItem>
           </CustomList>
         </Slide>
         <Slide>
+          <HeadingStyled size={4}>Template strings</HeadingStyled>
+          <CodePane lang="js" source={require('raw-loader!./assets/template_strings')} textSize="22" theme="external" contentEditable />
+        </Slide>
+
+        <Slide bgColor="tertiary">
+          <HeadingStyled size={2}>Exercise</HeadingStyled>
+          <CustomList ordered>
+            <StyledListItem>Rewrite ES5 string concatenation, into template string  <Code>src/es6/starter/template_strings.js</Code></StyledListItem>
+            <StyledListItem>List members names with consequent numbers. Each member name should be introduced in new line, like (<Code>Member nr 1 is Alexander</Code>)</StyledListItem>
+          </CustomList>
+        </Slide>
+
+        <Slide>
+          <HeadingStyled size={4}>Tagged templates</HeadingStyled>
+          <CodePane lang="js" source={require('raw-loader!./assets/tagged_templates')} textSize="22" theme="external" contentEditable />
+        </Slide>
+
+        <Slide>
           <HeadingStyled size={4}>Browser native DOM selector methods</HeadingStyled>
-          <Text textColor="tertiary">Where is my $ selector 😲</Text>
+          <Text textColor="secondary">Where is my $ selector 😲</Text>
           <Image src="https://media.giphy.com/media/3o84U72tKO389H2lI4/giphy.gif"/>
         </Slide>
+
+        <Slide>
+          <HeadingStyled size={4}>JS state today 😱</HeadingStyled>
+          <Image src={images.jsState} />
+        </Slide>
+
         <Slide>
           <HeadingStyled size={4}>Native browser document methods for DOM manipulations</HeadingStyled>
           <CustomList>
@@ -133,10 +186,6 @@ export default class Presentation extends React.Component {
             <StyledListItem><Code>append</Code></StyledListItem>
             <StyledListItem><Code>createElement</Code></StyledListItem>
           </CustomList>
-        </Slide>
-        <Slide>
-          <HeadingStyled size={4}>Template strings</HeadingStyled>
-          <CodePane lang="js" source={require('raw-loader!./assets/template_strings')} textSize="22" theme="external" contentEditable />
         </Slide>
         <Slide bgColor="tertiary">
           <HeadingStyled size={2}>Exercise</HeadingStyled>

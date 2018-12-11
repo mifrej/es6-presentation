@@ -4,5 +4,10 @@ import acmModule from './src/folder_name/file_name';
 // named imports (name matters), curly braces
 import { teamName, team } from './src/folder_name/file_name';
 
+// alternatively
+import acmModule, { teamName, team } from './src/folder_name/file_name';
+
 acmModule();
 console.log(teamName, team);
+// Executing main stuff
+// ACM {name: "ACM", purpose: 'Apartment upgrades'}

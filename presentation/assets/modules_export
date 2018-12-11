@@ -14,3 +14,7 @@ export const team = {
   name: 'ACM',
   purpose: 'Apartment upgrades'
 };
+
+// alternatively
+export { teamName, team }
+export default mainModuleFunction

@@ -1,5 +1,19 @@
-
 const teamName = 'ACM';
 const age = 2;
-const sentence = `${teamName} team is ${age} years old, or so.`;
-console.log(sentence);
+const teamSentence = `${teamName} team is ${age} years old, or so.`;
+console.log(teamSentence);
+// ACM team is 2 years old, or so.
+
+const teamMembers = ['Alexander', 'Bastian']
+
+const membersSentence = `${teamName} has ${teamMembers.length} members. Their names are: \
+${teamMembers.map(
+  (member, idx) => `\nMember nr ${idx + 1} is ${member}`
+)}.`;
+
+console.log(membersSentence);
+/*
+ACM has 8 members. Their names are:
+Member nr 1 is Alexander,
+Member nr 2 is Bastian,
+*/
