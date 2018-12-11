@@ -177,14 +177,14 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide>
-          <HeadingStyled size={4}>Native browser document methods for DOM manipulations</HeadingStyled>
+          <HeadingStyled size={4}>Native browser <CodeStyled>document</CodeStyled> object methods for DOM manipulations</HeadingStyled>
           <CustomList>
-            <StyledListItem><Code>getElementById</Code></StyledListItem>
-            <StyledListItem><Code>querySelector</Code></StyledListItem>
-            <StyledListItem><Code>querySelectorAll</Code></StyledListItem>
-            <StyledListItem><Code>appendChild</Code></StyledListItem>
-            <StyledListItem><Code>append</Code></StyledListItem>
-            <StyledListItem><Code>createElement</Code></StyledListItem>
+            <StyledListItem><Code>getElementById('id_of_element')</Code></StyledListItem>
+            <StyledListItem><Code>querySelector('any_selector')</Code></StyledListItem>
+            <StyledListItem><Code>querySelectorAll('any_selector')</Code></StyledListItem>
+            <StyledListItem><Code>appendChild(node)</Code></StyledListItem>
+            <StyledListItem><Code>append((Node or DOMString)... nodes)</Code></StyledListItem>
+            <StyledListItem><Code>createElement('tagName')</Code></StyledListItem>
           </CustomList>
         </Slide>
         <Slide bgColor="tertiary">
