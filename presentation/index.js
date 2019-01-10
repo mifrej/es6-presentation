@@ -247,6 +247,17 @@ export default class Presentation extends React.Component {
           <HeadingStyled size={2}>Destructuring</HeadingStyled>
           <CodePane lang="js" source={require('raw-loader!./assets/destructuring')} textSize="22" theme="external" contentEditable />
         </Slide>
+
+        <Slide bgColor="tertiary">
+          <HeadingStyled size={2}>Exercise</HeadingStyled>
+          <HeadingStyled size={6} textAlign="left">In <Code>src/es6/starter/destructuring.js</Code></HeadingStyled>
+          <CustomList ordered>
+            <StyledListItem>Destructure properties <Code>first, last, twitter</Code> from <Code>person</Code> object</StyledListItem>
+            <StyledListItem>Destructure properties <Code>twitter, facebook</Code> with aliasing them to <Code>tweet, fb</Code> from object <Code>me</Code></StyledListItem>
+            <StyledListItem>Destructure <Code>width, color</Code> from <Code>settings</Code> with default values <Code>200, 'yellow'</Code></StyledListItem>
+          </CustomList>
+        </Slide>
+
       </Deck>
     );
   }
